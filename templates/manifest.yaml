@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: payment
-        image: "{{ .Values.deployment.image }}:{{ .Values.ImageVersion }}"
+        image: "{{ .Values.deployment.image }}:{{ .Values.ImageVersion | quote }}"
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
